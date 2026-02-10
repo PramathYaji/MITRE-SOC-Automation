@@ -8,7 +8,7 @@
 
 A comprehensive, fully-integrated Security Operations Center (SOC) environment featuring automated detection, incident response, threat intelligence, and adversary emulation capabilities. Built entirely with open-source tools.
 
-![SOC Architecture](assets/diagrams/architecture.png)
+![SOC Architecture](assets/diagrams/architecture.md)
 
 ---
 
