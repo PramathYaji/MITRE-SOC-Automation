@@ -10,10 +10,10 @@ SOC-in-a-Box implements a layered security architecture with microservices runni
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                      ATTACK SIMULATION LAYER                            │
 │  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │  Caldera (MITRE ATT&CK Adversary Emulation)                      │   │
-│  │  • Pre-built adversary profiles                                  │   │
-│  │  • Custom attack chains                                          │   │
-│  │  • Agent deployment on endpoints                                 │   │
+│  │  Caldera (MITRE ATT&CK Adversary Emulation)                     │    │
+│  │  • Pre-built adversary profiles                                 │    │
+│  │  • Custom attack chains                                         │    │
+│  │  • Agent deployment on endpoints                                │    │
 │  └─────────────────────────────────────────────────────────────────┘    │
 └──────────────────────────────┬──────────────────────────────────────────┘
                                │ Attacks
@@ -39,7 +39,7 @@ SOC-in-a-Box implements a layered security architecture with microservices runni
 │  │  • Rule processing (50+ custom rules)                             │  │
 │  │  • MITRE ATT&CK mapping                                           │  │
 │  │  • Alert generation                                               │  │
-│  └───────────────────────┬──────────────────────────────────────────┘   │
+│  └───────────────────────┬───────────────────────────────────────────┘  │
 │                          │                                              │
 │  ┌───────────────────────┴──────────────────────────────────────────┐   │
 │  │  Wazuh Indexer (OpenSearch)                                      │   │
