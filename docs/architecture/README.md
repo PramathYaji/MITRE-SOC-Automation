@@ -8,76 +8,76 @@ SOC-in-a-Box implements a layered security architecture with microservices runni
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                      ATTACK SIMULATION LAYER                             │
-│  ┌─────────────────────────────────────────────────────────────────┐   │
+│                      ATTACK SIMULATION LAYER                            │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
 │  │  Caldera (MITRE ATT&CK Adversary Emulation)                      │   │
 │  │  • Pre-built adversary profiles                                  │   │
 │  │  • Custom attack chains                                          │   │
 │  │  • Agent deployment on endpoints                                 │   │
-│  └─────────────────────────────────────────────────────────────────┘   │
+│  └─────────────────────────────────────────────────────────────────┘    │
 └──────────────────────────────┬──────────────────────────────────────────┘
                                │ Attacks
                                ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                         ENDPOINT LAYER                                   │
+│                         ENDPOINT LAYER                                  │
 │  ┌──────────────────────┐           ┌──────────────────────┐            │
 │  │  Windows Victims     │           │  Linux Victims       │            │
 │  │  • Wazuh Agent       │           │  • Wazuh Agent       │            │
 │  │  • Sysmon Logging    │           │  • Suricata IDS      │            │
 │  │  • Event Collection  │           │  • Auditd Logging    │            │
 │  └──────────┬───────────┘           └──────────┬───────────┘            │
-└─────────────┼──────────────────────────────────┼──────────────────────────┘
+└─────────────┼──────────────────────────────────┼────────────────────────┘
               │ Logs/Events                      │ Logs/Events
               └────────────────┬─────────────────┘
                                ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                      SIEM/XDR LAYER (Wazuh)                              │
-│  ┌──────────────────────────────────────────────────────────────────┐   │
-│  │  Wazuh Manager                                                    │   │
-│  │  • Log ingestion (port 1514)                                      │   │
-│  │  • Event correlation                                              │   │
-│  │  • Rule processing (50+ custom rules)                             │   │
-│  │  • MITRE ATT&CK mapping                                           │   │
-│  │  • Alert generation                                               │   │
+│                      SIEM/XDR LAYER (Wazuh)                             │
+│  ┌───────────────────────────────────────────────────────────────────┐  │
+│  │  Wazuh Manager                                                    │  │
+│  │  • Log ingestion (port 1514)                                      │  │
+│  │  • Event correlation                                              │  │
+│  │  • Rule processing (50+ custom rules)                             │  │
+│  │  • MITRE ATT&CK mapping                                           │  │
+│  │  • Alert generation                                               │  │
 │  └───────────────────────┬──────────────────────────────────────────┘   │
-│                          │                                               │
+│                          │                                              │
 │  ┌───────────────────────┴──────────────────────────────────────────┐   │
-│  │  Wazuh Indexer (OpenSearch)                                       │   │
-│  │  • Event storage and indexing                                     │   │
-│  │  • Full-text search                                               │   │
-│  │  • Historical analysis                                            │   │
+│  │  Wazuh Indexer (OpenSearch)                                      │   │
+│  │  • Event storage and indexing                                    │   │
+│  │  • Full-text search                                              │   │
+│  │  • Historical analysis                                           │   │
 │  └───────────────────────┬──────────────────────────────────────────┘   │
-│                          │                                               │
+│                          │                                              │
 │  ┌───────────────────────┴──────────────────────────────────────────┐   │
-│  │  Wazuh Dashboard                                                  │   │
-│  │  • Security events visualization                                  │   │
-│  │  • MITRE ATT&CK dashboard                                         │   │
-│  │  • Compliance reporting                                           │   │
-│  │  • Agent management                                               │   │
-│  └───────────────────────────────────────────────────────────────────┘   │
+│  │  Wazuh Dashboard                                                 │   │
+│  │  • Security events visualization                                 │   │
+│  │  • MITRE ATT&CK dashboard                                        │   │
+│  │  • Compliance reporting                                          │   │
+│  │  • Agent management                                              │   │
+│  └──────────────────────────────────────────────────────────────────┘   │
 └──────────────────────────────┬──────────────────────────────────────────┘
                                │ Alerts
                                ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                      ORCHESTRATION LAYER (SOAR)                          │
+│                      ORCHESTRATION LAYER (SOAR)                         │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
-│  │  Shuffle                                                          │   │
-│  │  • Webhook receivers for alerts                                   │   │
-│  │  • Automated playbooks                                            │   │
-│  │  • Integration with TheHive, Cortex, MISP                         │   │
-│  │  • Alert enrichment workflows                                     │   │
+│  │  Shuffle                                                         │   │
+│  │  • Webhook receivers for alerts                                  │   │
+│  │  • Automated playbooks                                           │   │
+│  │  • Integration with TheHive, Cortex, MISP                        │   │
+│  │  • Alert enrichment workflows                                    │   │
 │  └───────────────────────┬──────────────────────────────────────────┘   │
-└─────────────────────────────┼──────────────────────────────────────────┘
+└─────────────────────────────┼───────────────────────────────────────────┘
                               │ Triggers
                               ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                   INCIDENT RESPONSE LAYER                                │
-│  ┌──────────────┐      ┌──────────────┐      ┌──────────────┐          │
-│  │  TheHive     │ ◄──► │   Cortex     │ ◄──► │    MISP      │          │
-│  │  :9000       │      │   :9001      │      │   :8443      │          │
-│  └──────────────┘      └──────────────┘      └──────────────┘          │
-│                                                                          │
-│  TheHive:                Cortex:              MISP:                      │
+│                   INCIDENT RESPONSE LAYER                               │
+│  ┌──────────────┐      ┌──────────────┐      ┌──────────────┐           │
+│  │  TheHive     │ ◄──► │   Cortex     │ ◄──► │    MISP      │           │
+│  │  :9000       │      │   :9001      │      │   :8443      │           │
+│  └──────────────┘      └──────────────┘      └──────────────┘           │
+│                                                                         │
+│  TheHive:                Cortex:              MISP:                     │
 │  • Case management      • IOC enrichment     • Threat intel feeds       │
 │  • Alert triage         • VirusTotal         • 50,000+ IOCs             │
 │  • Task assignment      • AbuseIPDB          • Event sharing            │
