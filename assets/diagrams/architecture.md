@@ -2,22 +2,22 @@
 
 ```
                                     ┌─────────────────────────────────────────────────────────────┐
-                                    │                 ATTACK SIMULATION LAYER                      │
-                                    │                                                              │
+                                    │                 ATTACK SIMULATION LAYER                     │
+                                    │                                                             │
                                     │  ┌────────────────────────────────────────────────────────┐ │
-                                    │  │  MITRE Caldera                                          │ │
-                                    │  │  Port: 8888                                             │ │
-                                    │  │  • Adversary emulation framework                        │ │
-                                    │  │  • MITRE ATT&CK technique execution                     │ │
-                                    │  │  • Agent-based attack simulation                        │ │
-                                    │  │  • Detection validation                                 │ │
+                                    │  │  MITRE Caldera                                         | │
+                                    │  │  Port: 8888                                            │ │
+                                    │  │  • Adversary emulation framework                       │ │
+                                    │  │  • MITRE ATT&CK technique execution                    │ │
+                                    │  │  • Agent-based attack simulation                       │ │
+                                    │  │  • Detection validation                                │ │
                                     │  └────────────────────────────────────────────────────────┘ │
-                                    └──────────────────────────┬───────────────────────────────────┘
+                                    └──────────────────────────┬──────────────────────────────────┘
                                                                │ Simulated Attacks
                                                                ▼
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                       ENDPOINT LAYER                                                    │
-│                                                                                                         │
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                       ENDPOINT LAYER                                                  │
+│                                                                                                       │
 │  ┌──────────────────────────────────┐           ┌──────────────────────────────────┐                  │
 │  │  Windows Victims                 │           │  Linux Victims                   │                  │
 │  │  ─────────────────               │           │  ──────────────                  │                  │
@@ -40,105 +40,105 @@
                 └────────────────────┬──────────────────────────┘
                                      ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    SIEM/XDR LAYER                                                       │
-│                                                                                                         │
-│  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐ │
-│  │  Wazuh Manager                                                                                    │ │
-│  │  Port: 1514 (Agent), 1515 (Enrollment), 55000 (API)                                              │ │
-│  │  ────────────────────────────────────────────────────────────                                    │ │
-│  │  • Centralized log collection                                                                    │ │
-│  │  • Real-time event correlation                                                                   │ │
-│  │  • 50+ custom detection rules                                                                    │ │
-│  │  • MITRE ATT&CK framework mapping                                                                │ │
-│  │  • Alert generation and prioritization                                                           │ │
-│  │  • File integrity monitoring                                                                     │ │
-│  │  • Vulnerability detection                                                                       │ │
-│  │  • Compliance monitoring (PCI DSS, GDPR, HIPAA)                                                  │ │
-│  └─────────────────────────────────────┬────────────────────────────────────────────────────────────┘ │
-│                                        │                                                              │
-│                                        ▼                                                              │
-│  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐ │
-│  │  Wazuh Indexer (OpenSearch)                                                                       │ │
-│  │  Port: 9200 (Internal)                                                                            │ │
-│  │  ─────────────────────────                                                                        │ │
-│  │  • High-performance event storage                                                                │ │
-│  │  • Full-text search capabilities                                                                 │ │
-│  │  • 30-day event retention (configurable)                                                         │ │
-│  │  • RESTful API for queries                                                                       │ │
-│  │  • Clustered deployment support                                                                  │ │
-│  └─────────────────────────────────────┬────────────────────────────────────────────────────────────┘ │
-│                                        │                                                              │
-│                                        ▼                                                              │
-│  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐ │
-│  │  Wazuh Dashboard                                                                                  │ │
-│  │  Port: 443 (HTTPS)                                                                                │ │
-│  │  ──────────────────                                                                               │ │
-│  │  • Security event visualization                                                                  │ │
-│  │  • MITRE ATT&CK heatmap                                                                          │ │
-│  │  • Real-time monitoring dashboards                                                               │ │
-│  │  • Compliance reporting                                                                          │ │
-│  │  • Agent health monitoring                                                                       │ │
-│  │  • Custom dashboard creation                                                                     │ │
-│  │  • Alert management interface                                                                    │ │
-│  └──────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                                    SIEM/XDR LAYER                                                      │
+│                                                                                                        │
+│  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │  Wazuh Manager                                                                                   │  │
+│  │  Port: 1514 (Agent), 1515 (Enrollment), 55000 (API)                                              │  │
+│  │  ────────────────────────────────────────────────────────────                                    │  │
+│  │  • Centralized log collection                                                                    │  │
+│  │  • Real-time event correlation                                                                   │  │
+│  │  • 50+ custom detection rules                                                                    │  │
+│  │  • MITRE ATT&CK framework mapping                                                                │  │
+│  │  • Alert generation and prioritization                                                           │  │
+│  │  • File integrity monitoring                                                                     │  │
+│  │  • Vulnerability detection                                                                       │  │
+│  │  • Compliance monitoring (PCI DSS, GDPR, HIPAA)                                                  │  │
+│  └─────────────────────────────────────┬────────────────────────────────────────────────────────────┘  │
+│                                        │                                                               │
+│                                        ▼                                                               │
+│  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │  Wazuh Indexer (OpenSearch)                                                                      │  │
+│  │  Port: 9200 (Internal)                                                                           │  │
+│  │  ─────────────────────────                                                                       │  │
+│  │  • High-performance event storage                                                                │  │
+│  │  • Full-text search capabilities                                                                 │  │
+│  │  • 30-day event retention (configurable)                                                         │  │
+│  │  • RESTful API for queries                                                                       │  │
+│  │  • Clustered deployment support                                                                  │  │
+│  └─────────────────────────────────────┬────────────────────────────────────────────────────────────┘  │
+│                                        │                                                               │
+│                                        ▼                                                               │
+│  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │  Wazuh Dashboard                                                                                 │  │
+│  │  Port: 443 (HTTPS)                                                                               │  │
+│  │  ──────────────────                                                                              │  │
+│  │  • Security event visualization                                                                  │  │
+│  │  • MITRE ATT&CK heatmap                                                                          │  │
+│  │  • Real-time monitoring dashboards                                                               │  │
+│  │  • Compliance reporting                                                                          │  │
+│  │  • Agent health monitoring                                                                       │  │
+│  │  • Custom dashboard creation                                                                     │  │
+│  │  • Alert management interface                                                                    │  │
+│  └──────────────────────────────────────────────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────┬──────────────────────────────────────────────────────────────┘
                                           │ Alerts (Webhook/API)
                                           ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                               ORCHESTRATION LAYER (SOAR)                                                │
-│                                                                                                         │
-│  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐ │
-│  │  Shuffle SOAR                                                                                     │ │
-│  │  Port: 3001 (HTTP)                                                                                │ │
-│  │  ──────────────────                                                                               │ │
-│  │  • Security orchestration and automation                                                         │ │
-│  │  • Automated playbook execution                                                                  │ │
-│  │  • Multi-tool integration platform                                                               │ │
-│  │                                                                                                   │ │
-│  │  Playbooks:                                                                                       │ │
-│  │  ├─ Alert Enrichment (IOC lookup, reputation checks)                                             │ │
-│  │  ├─ Malware Response (sandbox submission, isolation)                                             │ │
-│  │  ├─ Phishing Analysis (URL/attachment inspection)                                                │ │
-│  │  ├─ Brute Force Response (IP blocking, account lockout)                                          │ │
-│  │  └─ Credential Dump Response (memory collection, password reset)                                 │ │
-│  │                                                                                                   │ │
-│  │  Integrations:                                                                                    │ │
-│  │  • Wazuh (webhook receiver)                                                                      │ │
-│  │  • TheHive (case creation)                                                                       │ │
-│  │  • Cortex (enrichment)                                                                           │ │
-│  │  • MISP (threat intel)                                                                           │ │
-│  │  • Email/Slack (notifications)                                                                   │ │
-│  └──────────────────────────────────────────────────────────────────────────────────────────────────┘ │
+│                               ORCHESTRATION LAYER (SOAR)                                               │
+│                                                                                                        │
+│  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │  Shuffle SOAR                                                                                    │  │
+│  │  Port: 3001 (HTTP)                                                                               │  │
+│  │  ──────────────────                                                                              │  │
+│  │  • Security orchestration and automation                                                         │  │
+│  │  • Automated playbook execution                                                                  │  │
+│  │  • Multi-tool integration platform                                                               │  │
+│  │                                                                                                  │  │
+│  │  Playbooks:                                                                                      │  │
+│  │  ├─ Alert Enrichment (IOC lookup, reputation checks)                                             │  │
+│  │  ├─ Malware Response (sandbox submission, isolation)                                             │  │
+│  │  ├─ Phishing Analysis (URL/attachment inspection)                                                │  │
+│  │  ├─ Brute Force Response (IP blocking, account lockout)                                          │  │
+│  │  └─ Credential Dump Response (memory collection, password reset)                                 │  │
+│  │                                                                                                  │  │
+│  │  Integrations:                                                                                   │  │
+│  │  • Wazuh (webhook receiver)                                                                      │  │
+│  │  • TheHive (case creation)                                                                       │  │
+│  │  • Cortex (enrichment)                                                                           │  │
+│  │  • MISP (threat intel)                                                                           │  │
+│  │  • Email/Slack (notifications)                                                                   │  │
+│  └──────────────────────────────────────────────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────┬──────────────────────────────────────────────────────────────┘
                                           │ Workflow Triggers
                                           ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                               INCIDENT RESPONSE LAYER                                                   │
-│                                                                                                         │
-│  ┌─────────────────────┐       ┌─────────────────────┐       ┌─────────────────────┐                  │
-│  │    TheHive          │◄─────►│      Cortex         │◄─────►│       MISP          │                  │
-│  │    Port: 9000       │       │    Port: 9001       │       │    Port: 8443       │                  │
-│  │    (HTTP)           │       │     (HTTP)          │       │     (HTTPS)         │                  │
-│  └─────────────────────┘       └─────────────────────┘       └─────────────────────┘                  │
-│                                                                                                         │
+│                               INCIDENT RESPONSE LAYER                                                  │
+│                                                                                                        │
+│  ┌─────────────────────┐       ┌─────────────────────┐       ┌─────────────────────┐                   │
+│  │    TheHive          │◄─────►│      Cortex         │◄─────►│       MISP          │                   │
+│  │    Port: 9000       │       │    Port: 9001       │       │    Port: 8443       │                   │
+│  │    (HTTP)           │       │     (HTTP)          │       │     (HTTPS)         │                   │
+│  └─────────────────────┘       └─────────────────────┘       └─────────────────────┘                   │
+│                                                                                                        │
 │  TheHive Capabilities:         Cortex Capabilities:          MISP Capabilities:                        │
 │  ──────────────────            ─────────────────             ──────────────────                        │
 │  • Case Management             • IOC Enrichment              • Threat Intelligence Hub                 │
-│  • Alert Triage                • VirusTotal Integration      • 50,000+ IOCs                           │
-│  • Task Assignment             • AbuseIPDB Queries           • Threat Feeds:                          │
-│  • Observable Tracking         • MaxMind GeoIP                 - abuse.ch URLhaus                     │
-│  • Team Collaboration          • File Analysis                - MalwareBazaar                         │
-│  • Metrics & Reporting         • Yara Scanning                - CIRCL OSINT                           │
-│  • Template Library            • Custom Analyzers             - Botvrij.eu                            │
-│  • Integration APIs            • Automated Enrichment       • Event Sharing                           │
-│  • Case Templates              • Responder Actions          • MITRE ATT&CK Mapping                    │
-│                                • Multi-source Analysis       • API Access                             │
+│  • Alert Triage                • VirusTotal Integration      • 50,000+ IOCs                            │
+│  • Task Assignment             • AbuseIPDB Queries           • Threat Feeds:                           │
+│  • Observable Tracking         • MaxMind GeoIP                 - abuse.ch URLhaus                      │
+│  • Team Collaboration          • File Analysis                - MalwareBazaar                          │
+│  • Metrics & Reporting         • Yara Scanning                - CIRCL OSINT                            │
+│  • Template Library            • Custom Analyzers             - Botvrij.eu                             │
+│  • Integration APIs            • Automated Enrichment       • Event Sharing                            │
+│  • Case Templates              • Responder Actions          • MITRE ATT&CK Mapping                     │
+│                                • Multi-source Analysis       • API Access                              │
 │                                                             • Automated Correlation                    │
-│                                                                                                         │
+│                                                                                                        │
 │  Storage Backend:              Storage Backend:             Storage Backend:                           │
-│  • Cassandra (Cases)           • Elasticsearch (Results)    • MySQL (Events)                          │
-│  • Elasticsearch (Search)      • Docker for Analyzers       • Redis (Cache)                           │
-│                                                                                                         │
+│  • Cassandra (Cases)           • Elasticsearch (Results)    • MySQL (Events)                           │
+│  • Elasticsearch (Search)      • Docker for Analyzers       • Redis (Cache)                            │
+│                                                                                                        │
 └────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -189,7 +189,7 @@ Docker Network: soc-network (172.x.x.x/16)
 
 External Access Points:
 ┌──────────────────────────────────────────────────────────────┐
-│  Host Machine (Windows/Linux)                                 │
+│  Host Machine (Windows/Linux)                                │
 │  ├─ https://localhost:443      → Wazuh Dashboard             │
 │  ├─ http://localhost:9000      → TheHive                     │
 │  ├─ http://localhost:9001      → Cortex                      │
@@ -201,7 +201,7 @@ External Access Points:
 
 Internal Communication (Docker):
 ┌──────────────────────────────────────────────────────────────┐
-│  soc-network                                                  │
+│  soc-network                                                 │
 │  ├─ wazuh.manager:1514         → Agent connections           │
 │  ├─ wazuh.indexer:9200         → Data storage                │
 │  ├─ elasticsearch:9200         → TheHive/Cortex storage      │
