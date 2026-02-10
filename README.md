@@ -303,10 +303,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Project Author** - Security Operations Analyst
-
-Project Link: [https://github.com/YOUR_USERNAME/soc-in-a-box](https://github.com/YOUR_USERNAME/soc-in-a-box)
-
----
+**Project Author** - Faraz Ahmed and Pramatha Yaji
 
 ⭐ **If you found this project helpful, please give it a star!** ⭐
