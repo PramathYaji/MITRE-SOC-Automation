@@ -243,9 +243,7 @@ Endpoint → Wazuh → Alert → Shuffle → Enrich → TheHive → Analyst
 - [ ] Kubernetes deployment option
 - [ ] High availability configuration
 
-## Recruiter Appeal
-
-### Why This Project Stands Out
+## Why This Project Stands Out
 
 1. **Completeness**: Full SOC stack, not just a single tool
 2. **Real-world Relevance**: Addresses actual security challenges
@@ -313,9 +311,3 @@ SOC-in-a-Box represents a comprehensive demonstration of security operations cap
 The inclusion of attack simulation (Caldera), automated response (Shuffle), and comprehensive documentation demonstrates the ability to think like both attacker and defender, design automated solutions, and communicate technical concepts effectively.
 
 ---
-
-**Project Status**: ✅ Complete and Production-Ready
-
-**GitHub**: https://github.com/YOUR_USERNAME/soc-in-a-box
-
-**Contact**: your.email@example.com
