@@ -27,11 +27,11 @@
 │  │  • PowerShell Logging            │           │  • System Logs                   │                  │
 │  │                                  │           │                                  │                  │
 │  │  Events Collected:               │           │  Events Collected:               │                  │
-│  │  - Process Creation (ID 1)       │           │  - Authentication logs           │                  │
-│  │  - Network Connections (ID 3)    │           │  - File access                   │                  │
-│  │  - Process Access (ID 10)        │           │  - Network traffic               │                  │
-│  │  - Registry Modifications (ID 13)│           │  - Command execution             │                  │
-│  │  - File Creation (ID 11)         │           │  - IDS alerts                    │                  │
+│  │  - Process Creation              │           │  - Authentication logs           │                  │
+│  │  - Network Connections           │           │  - File access                   │                  │
+│  │  - Process Access                │           │  - Network traffic               │                  │
+│  │  - Registry Modifications        │           │  - Command execution             │                  │
+│  │  - File Creation                 │           │  - IDS alerts                    │                  │
 │  └────────────┬─────────────────────┘           └────────────┬─────────────────────┘                  │
 └───────────────┼──────────────────────────────────────────────┼────────────────────────────────────────┘
                 │                                              │
